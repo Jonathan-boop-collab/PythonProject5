@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 2 - Nombres</h1>
+
+        <form method="POST" action="/ejercicio2">
+            <label>Nombre 1:</label>
+            <input type="text" name="nombre1" required>
+
+            <label>Nombre 2:</label>
+            <input type="text" name="nombre2" required>
+
+            <label>Nombre 3:</label>
+            <input type="text" name="nombre3" required>
+
+            <button type="submit">Comparar</button>
+        </form>
+
+        {% if resultado %}
+        <div class="resultado">
+            {{ resultado }}<br>
+            Tiene {{ cantidad }} caracteres
+        </div>
+        {% endif %}
+
+        <a href="/" class="boton">Volver al Menú</a>
+    </div>
+</body>
+</html>
